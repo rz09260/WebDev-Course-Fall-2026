@@ -1,0 +1,17 @@
+    body {
+        background-color: yellow;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        color: blue;
+    }
+
+    h2 {
+        color: green;
+    }
+
+    p {
+        color: red;
+    }

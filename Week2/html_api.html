@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML API Example</title>
+</head>
+
+<body>
+    <h1>Web Storage API</h1>
+    <p>Save your name in the browser using <code>localStorage</code>.</p>
+    <label for="name">Name:</label>
+    <input id="name" type="text" placeholder="Enter your name">
+    <br>
+    <br>
+    <label for="age">Age:</label>
+    <input id="age" type="number" placeholder="Enter your age">
+    <br>
+    <br>
+    <button id="saveButton" type="button">Save data</button>
+    <button id="clearButton" type="button">Clear data</button>
+    <p id="message"></p>
+    <script>
+        const nameInput = document.getElementById('name');
+        const ageInput = document.getElementById('age');
+        const message = document.getElementById('message');
+
+        function showSavedName() {
+            const savedName = localStorage.getItem('studentName');
+            const savedAge = localStorage.getItem('studentAge');
+
+            if (savedName && savedAge) {
+                nameInput.value = savedName;
+                ageInput.value = savedAge;
+                message.textContent = `Welcome back, ${savedName}! You are ${savedAge} years old.`;
+            } else {
+                message.textContent = 'No data has been saved yet.';
+
+            }
+        }
+        document.getElementById('saveButton').addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            const age =ageInput.value.trim();
+            if (name && age) {
+                localStorage.setItem('studentName', name);
+                localStorage.setItem('studentAge', age);
+                showSavedName();
+            } else {
+                message.textContent = 'Please enter both a name and an age.';
+            }
+        });
+    
+        document.getElementById('clearButton').addEventListener('click', () => {
+            localStorage.removeItem('studentName');
+            nameInput.value = '';
+            message.textContent = 'Saved name cleared.';
+        });
+
+        showSavedName();
+    </script>
+</body>
+
+
+</html>

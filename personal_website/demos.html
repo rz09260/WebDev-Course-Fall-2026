@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Demos</title>
-        <link rel="styesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -17,17 +17,23 @@
             <a href="mywebsite.html">Home</a>
             <a href="projects.html">Projects</a>
             <a href="demos.html">Demos</a>
+            <a href="contact.html">Contact</a>
         </nav>
 
-        <h1>Project Demo Videos</h1>
+        <div class="container">
 
-        <ul>
-            <li>
+        <ul class="demo-list">
+            <li class="project-card">
                 <h2>Air Hockey Game Demo</h2>
+                <p>
+                    Demonstration of the Air Hockey game built using Verilog,
+                    infrared sensors, and bitmap graphics.
+                </p>
+
+                <div id="player"></div>
+
             </li>
         </ul>
-
-        <div id="player"></div>
 
     <script>
         var tag = document.createElement('script');
@@ -46,33 +52,7 @@
             });
         }
     </script>
-
-    <h2>Contact Information</h2>
-    <p><strong>Name:</strong> Razieh Zafar</p>
-
-        <p>
-            <strong>Email:</strong>
-            <a href="mailto:razieh.zafar4@gmail.com">
-                razieh.zafar4@gmail.com
-            </a>
-        </p>
-
-        <p>
-            <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/razieh-zafar/" target="_blank">
-                linkedin.com/in/razieh-zafar
-            </a>
-        </p>
-
-        <p>
-            <strong>GitHub:</strong>
-            <a href="https://github.com/rz09260" target="_blank">
-                github.com/rz09260
-            </a>
-        </p>
-
-        <p><strong>Location:</strong> Karachi, Pakistan</p>
-    </address>
-
+   
+    </div>
     </body>
 </html>

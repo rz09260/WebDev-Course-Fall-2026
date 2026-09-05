@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projects</title>
-        <link rel="styesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -17,28 +17,30 @@
             <a href="mywebsite.html">Home</a>
             <a href="projects.html">Projects</a>
             <a href="demos.html">Demos</a>
+            <a href="contact.html">Contact</a>
         </nav>
-
+        
+        <div class="container">
         <ul>
-            <li>
+            <li class="project-card">
                 <h2>Air Hockey Game</h2>
-                <img src="C:\Users\Razieh Zafar\Pictures\air hockey pic.jpg" alt="Air Hockey Game" width="250">
+                <img src="images/air-hockey.jpg" alt="Air Hockey Game" width="250">
                 <p>Designed and implemented an Air Hockey system using Verilog
                     and infrared sensors to detect goals and track gameplay. I used bitmapping
                     to display the score on the PC screen every time a goal was detected. </p>
             </li>
             
-            <li>
+            <li class="project-card">
                 <h2>Wall Following Robot</h2>
-                <img src="C:\Users\Razieh Zafar\Pictures\mci robot.jpg" alt="Wall Following Robot" width="250">
+                <img src="images/wall-robot.jpeg" alt="Wall Following Robot" width="250">
                 <p>I built an autonomous robot using a Tiva C microcontroller, 
                     ultrasonic sensors, and an L298N motor driver. The robot 
                     detects walls and adjusts its movement to maintain a fixed distance. </p>
             </li>
 
-            <li>
+            <li class="project-card">
                 <h2>Automated Hair Analysis Using Computer Vision</h2>
-                <img src="C:\Users\Razieh Zafar\Pictures\WhatsApp Image 2026-05-07 at 8.04.43 PM.jpeg" alt="Automted Hair Analysis" width="250">
+                <img src="images/cv-hair.jpeg" alt="Automted Hair Analysis" width="250">
                 <p>In this project, I used an LLM that could predict the hair type of a person 
                     simply by uploading a snapshot of their hair. The model was trained on the 
                     Figaro-1k dataset, which contains images of hair with different types and 
@@ -49,13 +51,13 @@
                 </p>
             </li>
 
-            <li>
+            <li class="project-card">
                 <h2>6DoF Robot Arm</h2>
-                <img src="C:\Users\Razieh Zafar\Pictures\WhatsApp Image 2026-08-07 at 9.21.07 PM.jpeg" alt="Robot Arm" width="250">
+                <img src="images/robo-arm.jpeg" alt="Robot Arm" width="250">
                 <p> We worked on a robotic arm end-effector system for automated sticker 
                     picking and placement using suction-based gripping and custom tray mechanisms.</p>
             </li>
         </ul>
-     
+    </div>
     </body>
 </html>
