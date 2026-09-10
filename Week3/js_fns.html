@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Examples of functions in JavaScript</h1>
+    <p>Open the browser console to see the outputs.</p>
+
+    <h2>Calculator</h2>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+
+    <br><br>
+
+    <button id="addBtn">Add</button>
+    <button id="subBtn">Subtract</button>
+    <button id="mulBtn">Multiply</button>
+    <button id="divBtn">Divide</button>
+
+    <h3 id="result">Result: </h3>
+
+    <script>
+        //debugger;
+        // 1. Basic function declaration
+        function greet(name) {
+           return "Hello, " + name + "!";
+           
+        }
+
+        console.log(greet("Alice"));
+        console.log(greet("Bob"));
+
+        // 2. Function expression
+        // Use a function expression when you want to store a function in a variable, 
+        // pass it as a value, or use it conditionally.
+        const add = function (a, b) {
+            return a + b;
+        };
+
+        console.log("Sum:", add(5, 3));
+
+        // 3. Arrow function
+        const square = x => x * x;
+        console.log("Square:", square(6));
+
+        const subtract = (a, b) => a - b;
+        const multiply = (a, b) => a * b;
+        const divide = (a, b) => {
+            if (b === 0) {
+                return "Cannot divide by zero";
+            }
+            return a / b;
+        };
+
+        // 4. Default parameters
+        function multiply(a, b = 2) {
+            return a * b;
+        }
+
+        console.log("Multiply with default:", multiply(4));
+        console.log("Multiply with custom value:", multiply(4, 5));
+        console.log("Subtraction:", subtract(10, 5));
+        console.log("Multiplication:", multiply(10, 5));
+        console.log("Division:", divide(10, 5));
+        console.log("Sum of all numbers:", sumAll(1, 2, 3, 4, 5));
+
+        // 5. Rest parameters......More examples of rest parameters are in the week4/js_restfn.html file
+        function sum(...numbers) {
+            return numbers.reduce((total, num) => total + num, 0);
+        }
+
+        console.log("Rest sum:", sum(1, 2, 3, 4, 5,6,7,8,9,10));
+
+        // 6. Callback function
+        const numbers = [1, 2, 3, 4];
+        const doubled = numbers.map(function (n) {
+            return n * 2;
+        });
+
+        console.log("Doubled numbers:", doubled);
+
+        const names = ["Ali", "Ayesha", "Zain"];
+        const greetings = names.map(name => "Hello " + name);
+        console.log(greetings);
+ 
+
+        // 7. Higher-order function -  A fn that either takes one or more functions as arguments, returns a function as its result, or both. 
+        function applyOperation(arr, operation) {
+            return arr.map(operation);
+        }
+
+        console.log("Operation result:", applyOperation([10, 20, 30], n => n + 5));
+
+        // 8. Closure - A feature where an inner fn has access to the outer (enclosing) fn's variables
+        function outer() {
+            let count = 0;
+
+            return function inner() {
+                count++;
+                return count;
+            };
+        }
+
+        const counter = outer();
+        console.log("Counter 1:", counter());
+        console.log("Counter 2:", counter());
+        console.log("Counter 3:", counter());
+
+        // 9. Recursion
+        function factorial(n) {
+            if (n <= 1) return 1;
+            return n * factorial(n - 1);
+        }
+
+        console.log("Factorial of 5:", factorial(5));
+
+        // 10. Immediately Invoked Function Expression (IIFE) - Legacy way of creating a function that runs immediately after its definition. It is often used to create a new scope and avoid polluting the global namespace.
+        (function () {
+            console.log("This runs immediately.");
+        })();
+
+        // 11. Object method
+        const person = {
+            name: "Ayesha",
+            sayHi() {
+                return "Hi, I am " + this.name;
+            }
+        };
+
+        console.log(person.sayHi());
+
+        // 12. Constructor function - legacy
+        function Student(name, grade) {
+            this.name = name;
+            this.grade = grade;
+        }
+
+        Student.prototype.describe = function () {
+            return this.name + " has grade " + this.grade;
+        };
+
+        const student1 = new Student("Zain", "A");
+        console.log(student1.describe());
+
+        // 13. Class syntax - modern way of creating objects and methods
+        class Car {
+            constructor(make, model) {
+                this.make = make;
+                this.model = model;
+            }
+
+            describe() {
+                return `${this.make} ${this.model}`;
+            }
+        }
+
+        const car1 = new Car("Toyota", "Corolla");
+        console.log(car1.describe());
+    </script>
+</body>
+
+</html>
